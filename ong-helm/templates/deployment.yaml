@@ -2,23 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}
-  namespace: {{ .Values.ong-test.namespace }}
+  namespace: {{ .Values.nginx.namespace }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
 spec:
   selector:
     matchLabels:
-      app: ong-test
+      app: nginx
       app.kubernetes.io/name: {{ .Release.Name }}
-  replicas: {{ .Values.ong-test.replicas }}
+  replicas: {{ .Values.nginx.replicas }}
   template:
     metadata:
       labels:
-        app: ong-test
+        app: nginx
         app.kubernetes.io/name: {{ .Release.Name }}
     spec:
       containers:
-      - name: ong-test
-        image: {{ .Values.ong-test.image }}
+      - name: nginx
+        image: {{ .Values.nginx.image }}
         ports:
         - containerPort: 80

@@ -2,11 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}
-  namespace: {{ .Values.ong-test.namespace }}
+  namespace: {{ .Values.nginx.namespace }}
   labels:
     app.kubernetes.io/name: {{ .Release.Name }}
 spec:
-  type: {{ .Values.ong-test.service.type }}
+  type: {{ .Values.nginx.service.type }}
   selector:
     app: nginx
   ports:
