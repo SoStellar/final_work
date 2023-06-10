@@ -1,4 +1,4 @@
-nginx:
+ong-test:
   namespace: default
   image: ongpeerawit/testjodejsapp:main
   replicas: 1
