@@ -1,6 +1,6 @@
 nginx:
   namespace: default
-  image: nginx:1.23.0
+  image: ongpeerawit/testjodejsapp:main
   replicas: 1
   host: ong-final-lab.arpo.website
   ingress:
